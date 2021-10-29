@@ -4,6 +4,7 @@
 
 ## Project Summary
 
+I plan on making a calendar with an event scheduler.
 Tools: Liquid, Express, Node.Js, MongoDB
 
 ## Models

@@ -1,7 +1,6 @@
-// import deps
 const express = require("express");
-
-// app object
+const dotenv = require("dotenv");
+dotenv.config({ path: ".env" });
 const app = express();
 
 // route
