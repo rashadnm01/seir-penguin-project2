@@ -4,26 +4,31 @@
 
 ## Project Summary
 
-I plan on making a calendar with an event scheduler.
-Tools: Liquid, Express, Node.Js, MongoDB
+### Event Schedule
+
+This will be an evenet scheduler that will be able to be used by users to keep track of their schedule.
 
 ## Models
 
-List here any models in your app and their properties
+Connect - MongoDB Connection
+Calendar - This will create every day of the week on a calendar.
+CalendarEvent - This will create events to be placed on the calendar
 
 ## Route Table
 
-List your routes in a table
-
-| url       | method | action                       |
-| --------- | ------ | ---------------------------- |
-| /todo     | get    | get all todos (index)        |
-| /todo/:id | get    | get a particular todo (show) |
+| url                    | method | action                                           |
+| ---------------------- | ------ | ------------------------------------------------ |
+| /calendar              | get    | Shows entire calendar (index)                    |
+| /calendar/create-event | post   | Creates a new event on calendar                  |
+| /calendar/date         | get    | Shows a specific day on the calendar (show)      |
+| /calendar/edit-event   | get    | Edit a certain days event on the calendar (show) |
 
 ## User Stories
 
 ## Challenges
 
-- detail roadblocks and anything you did to overcome whether you did or didn't
+-
 
 ## List of Technologies
+
+Tools: Liquid, Express, Node.Js, MongoDB
