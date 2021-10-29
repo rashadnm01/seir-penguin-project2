@@ -16,12 +16,15 @@ CalendarEvent - This will create events to be placed on the calendar
 
 ## Route Table
 
-| url                    | method | action                                           |
-| ---------------------- | ------ | ------------------------------------------------ |
-| /calendar              | get    | Shows entire calendar (index)                    |
-| /calendar/create-event | post   | Creates a new event on calendar                  |
-| /calendar/date         | get    | Shows a specific day on the calendar (show)      |
-| /calendar/edit-event   | get    | Edit a certain days event on the calendar (show) |
+| url                        | method            | action                                      |
+| -------------------------- | ----------------- | ------------------------------------------- |
+| /calendar                  | get               | Shows entire calendar (index)               |
+| /calendar/:date            | get               | Shows a specific day on the calendar (show) |
+| /calendar/create-event     | get               | Creates an event for a specific day (new)   |
+| /calendar                  | post              | Adds new event to calendar (create)         |
+| /calendar/:date            | patch (via post)  | Updates event on the calendar (new)         |
+| /calendar/:date/edit-event | put               | Edit a certain days event on the calendar   |
+| /calendar/:date/           | delete (via post) | Removes events from a certain day           |
 
 ## User Stories
 
