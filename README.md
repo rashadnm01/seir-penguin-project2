@@ -12,8 +12,6 @@ This will be an evenet scheduler that will be able to be used by users to keep t
 
 Connect - MongoDB Connection
 
-Calendar - This will create every day of the week on a calendar.
-
 CalendarEvent - This will create events to be placed on the calendar
 
 ## Route Table
