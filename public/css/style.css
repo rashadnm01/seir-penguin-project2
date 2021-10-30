@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+body {
+  background-color: rgb(60, 173, 173) !important;
+}
+.daysCol {
+  height: 12vh;
+  text-align: center;
+  border: 1px solid black;
+  background-color: white;
+}
+#days {
+  font-family: "Fruktur", cursive;
+  font-size: 1.5vw;
+  color: rgb(0, 119, 230);
+  text-align: center;
+}
+#month {
+  text-align: center;
+  font-family: "Fruktur", cursive;
+  font-size: 2vw;
+}
+.weekdays {
+  background-color: lightslategray;
+  border: 1px solid black;
+}
+.btn {
+  margin: 10px 50px;
+  width: 200px;
+}
