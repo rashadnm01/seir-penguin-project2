@@ -22,11 +22,12 @@ const loadCal = () => {
   const date = new Date();
 
   if (m !== 0) {
-    date.setMonth(new Date().getMonth + m);
+    date.setMonth(new Date().getMonth() + m);
   }
 
   const day = date.getDate();
   const month = date.getMonth();
+  console.log("month: " + month);
   const year = date.getFullYear();
   const firstDayOfMonth = new Date(year, month, 1);
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -47,8 +48,9 @@ const loadCal = () => {
     rows = (paddingDays + daysInMonth) / 7;
   } else {
     rows = Math.floor((paddingDays + daysInMonth) / 7) + 1;
+    console.log("rows: " + rows);
   }
-  for (let i = 1; i < rows; i++) {
+  for (let i = 1; i <= rows; i++) {
     $calendarDiv.append($row.clone());
   }
   $.each($(".daysCol"), (index, record) => {
@@ -65,7 +67,6 @@ const loadCal = () => {
 const buttonAction = () => {
   $("#nextButton").on("click", () => {
     m++;
-
     loadCal();
   });
   $("#backButton").on("click", () => {
