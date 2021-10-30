@@ -34,7 +34,7 @@ app.use(
 );
 // route
 app.get("/calendar", (req, res) => {
-  res.render("index.html");
+  res.render("calendar.html");
 });
 
 // listener
