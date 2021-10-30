@@ -5,10 +5,11 @@ const morgan = require("morgan"); // logger
 const methodOverride = require("method-override"); // to swap request methods
 const session = require("express-session"); // session middleware
 const MongoStore = require("connect-mongo"); // save sessions in mongo
-const app = express();
-app.set("view engine", "html");
+const liquid = require("liquid-express-views");
+const path = require("path");
+const viewsFolder = path.resolve(__dirname, "views/");
+const app = liquid(express(), { root: viewsFolder });
 
-app.engine("html", require("ejs").renderFile);
 //middleware
 app.use(morgan("tiny"));
 app.use(methodOverride("_method"));
@@ -22,9 +23,16 @@ app.use(
     saveUninitialized: true,
   })
 );
+const CalendarEvent = require("./models/CalendarEvent");
 // route
 app.get("/calendar", (req, res) => {
-  res.render("calendar.html");
+  res.render("calendar.liquid");
+});
+app.post("/calendar", (req, res) => {
+  const { user, date, location, time } = req.body;
+});
+app.get("/calendar/create-event", (req, res) => {
+  res.render("new.liquid");
 });
 
 // listener

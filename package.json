@@ -4,7 +4,6 @@
   "description": "#### By RASHAD M.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
@@ -20,14 +19,17 @@
   },
   "homepage": "https://github.com/rashadnm01/seir-penguin-project2#readme",
   "dependencies": {
+    "connect": "^3.7.0",
     "connect-mongo": "^4.6.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "liquid": "^5.1.1",
     "liquid-express-views": "^1.0.8",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.12",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
   }
 }
