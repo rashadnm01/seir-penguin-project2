@@ -10,19 +10,30 @@ const path = require("path");
 const viewsFolder = path.resolve(__dirname, "views/");
 const app = liquid(express(), { root: viewsFolder });
 
+const mongoose = require("mongoose");
+const db = mongoose.connection;
+require("dotenv").config({ path: `.env` });
+mongoose.Promise = global.Promise;
+const mongoURI = process.env.DATABASE_URL;
 //middleware
 app.use(morgan("tiny"));
 app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
-app.use(
-  session({
-    secret: process.env.SECRET,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-    resave: false,
-    saveUninitialized: true,
-  })
+// Dependencies
+
+mongoose.connect(
+  mongoURI,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => {
+    console.log("The connection with mongod is established");
+  }
 );
+
+// Error / success
+db.on("error", (err) => console.log(err.message + " is Mongod not running?"));
+db.on("connected", () => console.log("mongo connected: ", mongoURI));
+db.on("disconnected", () => console.log("mongo disconnected"));
 const CalendarEvent = require("./models/CalendarEvent");
 // route
 app.get("/calendar", (req, res) => {

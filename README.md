@@ -28,10 +28,27 @@ CalendarEvent - This will create events to be placed on the calendar
 
 ## User Stories
 
+1.) Users should be able to schedule an event on my calendar.
+
+- By clicking "Create An Event"
+- Entering event information on next page.
+
+  2.) User should be able to see all events scheduled by all users at all times.
+
 ## Challenges
 
--
+Oct. 30, 19:09
+
+- I need to send each event to a different div. I
 
 ## List of Technologies
 
 Tools: Liquid, Express, Node.Js, MongoDB
+
+### logs
+
+Saturday Oct. 30
+
+19:03 CST
+
+I don't think I'm going to finish this.
