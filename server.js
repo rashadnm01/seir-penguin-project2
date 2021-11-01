@@ -51,23 +51,38 @@ app.post("/calendar", (req, res) => {
 });
 app.get("/calendar/:id/edit-event", (req, res) => {
   const id = req.params.id;
-  CalendarEvent.findById(id);
+  CalendarEvent.findById(id)
+    .then((calEvent) => {
+      res.render("edit-event.liquid", { calEvent });
+    })
+    .catch((error) => {
+      res.json(error);
+    });
+});
+app.put("/calendar/:id", (req, res) => {
+  const id = req.params.id;
+  CalendarEvent.findByIdAndUpdate(id, req.body, { new: true })
+    .then((calEvent) => {
+      res.redirect("/calendar");
+    })
+    .catch((error) => {
+      res.json(error);
+    });
 });
 app.get("/calendar/create-event", (req, res) => {
   res.render("./new.liquid");
 });
 app.delete("/calendar/:id", (req, res) => {
   const id = req.params.id;
-  CalendarEvent.findById(id, (error, user) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Removed user " + user);
+  CalendarEvent.findByIdAndRemove(id)
+    .then((calEvent) => {
       res.redirect("/calendar");
-    }
-  });
+    })
+    .catch((error) => {
+      res.json(error);
+    });
 });
-app.get("calendar/:id", (req, res) => {
+app.get("/calendar/:id", (req, res) => {
   const id = req.params.id;
   CalendarEvent.findById(id)
     .then((calEvent) => {

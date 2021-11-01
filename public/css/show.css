@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Fruktur&display=swap");
+.container {
+  font-family: "Fruktur", cursive;
+  text-align: center;
+  width: 50%;
+  background-color: aqua;
+  margin-top: 1vw;
+  border: 1px solid aquamarine;
+  border-radius: 5vw;
+  height: 60vh;
+  font-size: 5vw;
+}
+
+#edit {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}

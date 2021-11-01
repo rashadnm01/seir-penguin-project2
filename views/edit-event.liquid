@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Event</title>
+    <title>Edit {{ calEvent.user }}'s Event</title>
     <link rel="stylesheet" href="/css/new.css" />
     <link
       rel="stylesheet"
@@ -16,7 +16,11 @@
   <body>
     <div class="container">
       <a href="/calendar">Back</a>
-      <form type="submit" action="/calendar" method="post">
+      <form
+        type="submit"
+        action="/calendar/{{ calEvent._id }}?_method=PUT"
+        method="post"
+      >
         <h1>Edit A New Event</h1>
         <label for="event-date">Event Date</label>
         <input type="date" name="date" />
