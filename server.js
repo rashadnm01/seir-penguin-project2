@@ -37,23 +37,46 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 const CalendarEvent = require("./models/CalendarEvent");
 // route
 
+app.get("/", (req, res) => {
+  res.render("home.liquid");
+});
+app.get("/calendar", (req, res) => {
+  const CalendarEvents = CalendarEvent.find({});
+  res.render("calendar.liquid", { CalendarEvents: CalendarEvents });
+});
 app.post("/calendar", (req, res) => {
   CalendarEvent.create(req.body).then((data) => {
     res.redirect("/calendar");
   });
 });
+app.get("/calendar/:id/edit-event", (req, res) => {
+  const id = req.params.id;
+  CalendarEvent.findById(id);
+});
 app.get("/calendar/create-event", (req, res) => {
-  res.render("new.liquid");
+  res.render("./new.liquid");
 });
-
-app.get("calendar/:date", (req, res) => {
-  const date = req.params.date;
-  const calEvent = CalendarEvent.find({ date: date });
-  res.render("show-event.liquid", { calEvent });
+app.delete("/calendar/:id", (req, res) => {
+  const id = req.params.id;
+  CalendarEvent.findById(id, (error, user) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Removed user " + user);
+      res.redirect("/calendar");
+    }
+  });
 });
-app.get("/calendar", (req, res) => {
-  const CalendarEvents = CalendarEvent.find({});
-  res.render("calendar.liquid", { CalendarEvents: CalendarEvents });
+app.get("calendar/:id", (req, res) => {
+  const id = req.params.id;
+  CalendarEvent.findById(id)
+    .then((calEvent) => {
+      console.log(calEvent);
+      res.render("show-event.liquid", { calEvent });
+    })
+    .catch((error) => {
+      res.json(error);
+    });
 });
 // listener
 const PORT = process.env.PORT || 3000;

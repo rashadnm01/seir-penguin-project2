@@ -1,0 +1,9 @@
+div {
+  text-align: center;
+  width: 100%;
+  background-color: aqua;
+  margin-top: 5vw;
+  border: 1px solid aquamarine;
+  border-radius: 5vw;
+  height: 18vh;
+}

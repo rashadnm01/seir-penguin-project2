@@ -21,15 +21,15 @@ const loadCal = () => {
     $(record).remove();
   });
 
-  $.each($(".event"), (index, record) => {
-    const event = $(record);
-    events.push({
-      date: event.attr("id"),
-      user: event.text().slice(0, event.text().indexOf(":")),
-      time: event.text().slice(event.text().indexOf(":") + 2),
-    });
-    $(record).remove();
-  });
+  // $.each($(".event"), (index, record) => {
+  //   const event = $(record);
+  //   events.push({
+  //     date: event.attr("id"),
+  //     user: event.text().slice(0, event.text().indexOf(":")),
+  //     time: event.text().slice(event.text().indexOf(":") + 2),
+  //   });
+  //   $(record).remove();
+  // });
   console.log(events);
   const date = new Date();
 
@@ -81,7 +81,8 @@ const loadCal = () => {
             events[j].date.slice(8, 10) == "0" + (i - paddingDays))
         ) {
           console.log("year: " + year, "month: " + month);
-          $("#" + i).append(
+          console.log($(".event"));
+          $("body").append(
             $(".event")
               .clone()
               .text(events[j].user + ": " + events[j].time)

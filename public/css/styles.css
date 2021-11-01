@@ -42,3 +42,7 @@ body {
 .event:hover {
   background-color: rgb(0, 174, 255);
 }
+#create-event {
+  font-family: "Fruktur", cursive;
+  font-size: 2vw;
+}

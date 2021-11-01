@@ -26,7 +26,9 @@
           <div id="month">January XXXX</div>
           <button type="button" class="btn" id="nextButton">Next</button>
         </div>
-        <a href="/calendar/create-event">Create An Event</a>
+        <div class="d-sm-flex justify-content-center">
+          <a id="create-event" href="/calendar/create-event">Create An Event</a>
+        </div>
       </div>
       <div class="m-4" id="calendar">
         <div id="calendarHeading">
@@ -53,7 +55,9 @@
       <div class="event-list">
         {% for event in CalendarEvents %}
         <div class="event" id="{{ event.date }}">
-          {{ event.user }}: {{ event.time }}
+          <a href="/calendar/{{ event._id }}"
+            >{{ event.user }}: {{ event.time }}</a
+          >
         </div>
         {% endfor %}
       </div>
