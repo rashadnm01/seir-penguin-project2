@@ -36,16 +36,25 @@ db.on("connected", () => console.log("mongo connected: ", mongoURI));
 db.on("disconnected", () => console.log("mongo disconnected"));
 const CalendarEvent = require("./models/CalendarEvent");
 // route
-app.get("/calendar", (req, res) => {
-  res.render("calendar.liquid");
-});
+
 app.post("/calendar", (req, res) => {
-  const { user, date, location, time } = req.body;
+  CalendarEvent.create(req.body).then((data) => {
+    res.redirect("/calendar");
+  });
 });
 app.get("/calendar/create-event", (req, res) => {
   res.render("new.liquid");
 });
 
+app.get("calendar/:date", (req, res) => {
+  const date = req.params.date;
+  const calEvent = CalendarEvent.find({ date: date });
+  res.render("show-event.liquid", { calEvent });
+});
+app.get("/calendar", (req, res) => {
+  const CalendarEvents = CalendarEvent.find({});
+  res.render("calendar.liquid", { CalendarEvents: CalendarEvents });
+});
 // listener
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, console.log(`listening on port ${PORT}`));

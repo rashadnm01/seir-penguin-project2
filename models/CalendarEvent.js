@@ -4,7 +4,7 @@ const calendarEventSchema = new Schema({
   user: String,
   date: String,
   location: String,
-  time: Number,
+  time: String,
 });
 
 const CalendarEvent = model("CalendarEvent", calendarEventSchema);

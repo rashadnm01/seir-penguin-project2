@@ -50,6 +50,13 @@
           <div class="daysCol col saturdayCol"></div>
         </div>
       </div>
+      <div class="event-list">
+        {% for event in CalendarEvents %}
+        <div class="event" id="{{ event.date }}">
+          {{ event.user }}: {{ event.time }}
+        </div>
+        {% endfor %}
+      </div>
     </div>
 
     <script

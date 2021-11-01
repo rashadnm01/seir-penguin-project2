@@ -6,13 +6,13 @@
 
 ### Event Schedule
 
-This will be an evenet scheduler that will be able to be used by users to keep track of their schedule.
+This is an event scheduler that will be able to be used by users to keep track of my schedule.
 
 ## Models
 
 Connect - MongoDB Connection
 
-CalendarEvent - This will create events to be placed on the calendar
+CalendarEvent - This will create events to be placed on the calendar by users
 
 ## Route Table
 
@@ -33,13 +33,13 @@ CalendarEvent - This will create events to be placed on the calendar
 - By clicking "Create An Event"
 - Entering event information on next page.
 
-  2.) User should be able to see all events scheduled by all users at all times.
+  2.) A user should be able to see all events scheduled by all users at all times.
 
 ## Challenges
 
 Oct. 30, 19:09
 
-- I need to send each event to a different div. I
+- I need to send each event to a different div.
 
 ## List of Technologies
 
