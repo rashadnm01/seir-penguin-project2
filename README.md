@@ -28,11 +28,12 @@ CalendarEvent - This will create events to be placed on the calendar by users
 
 ## User Stories
 
-1.) Users should be able to schedule an event on my calendar.
+1. Users should be able to schedule an event on my calendar.
 
----- By clicking "Create An Event"
----- Entering event information on next page.
-2.) A user should be able to see all events scheduled by all users at all times.
+- By clicking "Create An Event"
+- Entering event information on next page.
+
+2. A user should be able to see all events scheduled by all users at all times.
 
 ## Challenges
 
