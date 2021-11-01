@@ -30,10 +30,9 @@ CalendarEvent - This will create events to be placed on the calendar by users
 
 1.) Users should be able to schedule an event on my calendar.
 
-- By clicking "Create An Event"
-- Entering event information on next page.
-
-  2.) A user should be able to see all events scheduled by all users at all times.
+---- By clicking "Create An Event"
+---- Entering event information on next page.
+2.) A user should be able to see all events scheduled by all users at all times.
 
 ## Challenges
 
@@ -41,7 +40,7 @@ Oct. 30, 19:09
 
 - I need to send each event to a different div.
 
-Oct. 31, 05:02
+Nov. 1, 05:02
 
 - For some reason, on Oct. 31st, once it got around 7PM, the calendar started to bug out a bit, and once it hit November 1st it started working again. It started to skip months for some reason.
 
