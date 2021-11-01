@@ -35,6 +35,10 @@ CalendarEvent - This will create events to be placed on the calendar by users
 
 2. A user should be able to see all events scheduled by all users at all times.
 
+- If an event is scheduled, it should be visible under the date on the calendar when it was scheduled.
+
+4. A user should be able to click on an event, see event details, edit events, and delete events.
+
 ## Challenges
 
 Oct. 30, 19:09
